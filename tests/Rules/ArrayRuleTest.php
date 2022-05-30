@@ -7,7 +7,7 @@ use Validation\Rules\ArrayRule;
 
 class ArrayRuleTest extends TestCase
 {
-    private ?ArrayRule $rule = null;
+    private ArrayRule $rule;
 
     public function setUp(): void
     {

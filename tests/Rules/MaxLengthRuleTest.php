@@ -7,7 +7,7 @@ use Validation\Rules\MaxLengthRule;
 
 class MaxLengthRuleTest extends TestCase
 {
-    private MaxLengthRule $rule ;
+    private MaxLengthRule $rule;
 
     public function setUp(): void
     {

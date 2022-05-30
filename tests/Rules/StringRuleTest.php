@@ -7,7 +7,7 @@ use Validation\Rules\StringRule;
 
 class StringRuleTest extends TestCase
 {
-    private ?StringRule $rule = null;
+    private StringRule $rule;
 
     public function setUp(): void
     {
