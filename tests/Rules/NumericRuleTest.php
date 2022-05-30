@@ -7,7 +7,7 @@ use Validation\Rules\NumericRule;
 
 class NumericRuleTest extends TestCase
 {
-    private ?NumericRule $rule = null;
+    private NumericRule $rule;
 
     public function setUp(): void
     {

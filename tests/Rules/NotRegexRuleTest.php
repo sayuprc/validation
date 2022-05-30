@@ -7,7 +7,7 @@ use Validation\Rules\NotRegexRule;
 
 class NotRegexRuleTest extends TestCase
 {
-    private ?NotRegexRule $rule = null;
+    private NotRegexRule $rule;
 
     public function setUp(): void
     {

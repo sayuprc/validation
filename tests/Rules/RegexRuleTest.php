@@ -7,7 +7,7 @@ use Validation\Rules\RegexRule;
 
 class RegexRuleTest extends TestCase
 {
-    private ?RegexRule $rule = null;
+    private RegexRule $rule;
 
     public function setUp(): void
     {
