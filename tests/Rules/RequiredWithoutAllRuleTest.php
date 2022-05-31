@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Rules;
 
 use PHPUnit\Framework\TestCase;
