@@ -2,7 +2,6 @@
 
 namespace Validation;
 
-use PhpCsFixer\RuleSet\RuleSetInterface;
 use Validation\Rules\NotExistsRuleException;
 use Validation\Rules\RuleInterface;
 
@@ -170,7 +169,7 @@ class Validator
      *
      * @return RuleInterface
      */
-    private function makeRequired(string $rule): RuleSetInterface
+    private function makeRequired(string $rule): RuleInterface
     {
         $className = sprintf("\Validation\Rules\%sRule", $rule);
 
