@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class RegexRule implements RuleInterface
@@ -14,6 +16,6 @@ class RegexRule implements RuleInterface
      */
     public function validate(mixed $value, mixed $parameters): bool
     {
-        return preg_match($parameters, $value);
+        return preg_match($parameters, $value) === 1 ? true : false;
     }
 }
