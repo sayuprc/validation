@@ -10,7 +10,7 @@ class MinRule implements RuleInterface
      * 数値が指定以上
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

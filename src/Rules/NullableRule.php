@@ -10,7 +10,7 @@ class NullableRule implements RuleInterface
      * すべてtrue
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

@@ -10,7 +10,7 @@ class ArrayRule implements RuleInterface
      * 値が配列である
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

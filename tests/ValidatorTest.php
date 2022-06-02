@@ -9,7 +9,10 @@ use Validation\Validator;
 
 class ValidatorTest extends TestCase
 {
-    public function testValidateSucceeded()
+    /**
+     * @return void
+     */
+    public function testValidateSucceeded(): void
     {
         $data = [
             'name' => 'hoge',
@@ -47,8 +50,10 @@ class ValidatorTest extends TestCase
 
     /**
      * 必須だが、値が存在しない
+     *
+     * @return void
      */
-    public function testValidateFailedRequiredWithNotExists()
+    public function testValidateFailedRequiredWithNotExists(): void
     {
         $data = [];
 
@@ -64,8 +69,10 @@ class ValidatorTest extends TestCase
     /**
      * 文字列で値が存在しな => 検証しない
      * 最小最大も同様
+     *
+     * @return void
      */
-    public function testValidateSucceededStringWithNotExists()
+    public function testValidateSucceededStringWithNotExists(): void
     {
         $data = [];
 
@@ -88,8 +95,10 @@ class ValidatorTest extends TestCase
     /**
      * 数値で値が存在しない => 検証しない
      * 最小最大も同様
+     *
+     * @return void
      */
-    public function testValidateSucceededNumericWithNotExists()
+    public function testValidateSucceededNumericWithNotExists(): void
     {
         $data = [];
 
@@ -111,8 +120,10 @@ class ValidatorTest extends TestCase
 
     /**
      * 配列で値が存在しない => 検証しない
+     *
+     * @return void
      */
-    public function testValidateSucceededArrayWithNotExists()
+    public function testValidateSucceededArrayWithNotExists(): void
     {
         $data = [];
 
@@ -128,8 +139,10 @@ class ValidatorTest extends TestCase
     /**
      * 正規表現ルールで値が存在しない => 検証しない
      * NotRegexも同様
+     *
+     * @return void
      */
-    public function testValidateSucceededRegexWithNotExists()
+    public function testValidateSucceededRegexWithNotExists(): void
     {
         $data = [];
 

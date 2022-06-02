@@ -17,6 +17,9 @@
     "scripts": {
       "test": [
         "phpunit"
+      ],
+      "analyze": [
+        "phpstan analyze"
       ]
     }
 }

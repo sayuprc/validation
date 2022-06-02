@@ -6,10 +6,13 @@ namespace Validation;
 
 class ValidateData
 {
+    /**
+     * @var array<string, mixed> $data
+     */
     private array $data;
 
     /**
-     * @param array $data
+     * @param array<string, mixed> $data
      *
      * @return void
      */
@@ -45,7 +48,7 @@ class ValidateData
     /**
      * 指定したキーがすべて配列内に存在しているか
      *
-     * @param array $names
+     * @param array<string> $names
      *
      * @return bool
      */
@@ -63,7 +66,7 @@ class ValidateData
     /**
      * 指定したキーのいずれかが配列内に存在しているか
      *
-     * @param array $names
+     * @param array<string> $names
      *
      * @return bool
      */

@@ -10,7 +10,7 @@ class MaxLengthRule implements RuleInterface
      * 文字長が指定より小さい
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

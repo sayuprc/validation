@@ -10,7 +10,7 @@ class MinLengthRule implements RuleInterface
      * 文字長が指定以上
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

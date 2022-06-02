@@ -11,6 +11,9 @@ class MinRuleTest extends TestCase
 {
     private MinRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -20,8 +23,10 @@ class MinRuleTest extends TestCase
 
     /**
      * 数値が指定以上の時、検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceeded()
+    public function testValidationSucceeded(): void
     {
         $this->assertTrue($this->rule->validate(1, '1'));
 
@@ -32,8 +37,10 @@ class MinRuleTest extends TestCase
 
     /**
      * 数値が指定より小さい時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailed()
+    public function testValidationFailed(): void
     {
         $this->assertFalse($this->rule->validate(0, '1'));
 
@@ -42,8 +49,10 @@ class MinRuleTest extends TestCase
 
     /**
      * 値がNULLの時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNull()
+    public function testValidationFailedWithNull(): void
     {
         $this->assertFalse($this->rule->validate(null, '4'));
     }

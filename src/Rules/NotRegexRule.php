@@ -10,7 +10,7 @@ class NotRegexRule implements RuleInterface
      * 正規表現にマッチしない
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

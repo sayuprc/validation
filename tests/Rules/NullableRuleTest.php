@@ -11,6 +11,9 @@ class NullableRuleTest extends TestCase
 {
     private NullableRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -20,8 +23,10 @@ class NullableRuleTest extends TestCase
 
     /**
      * どんな値でも検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceeded()
+    public function testValidationSucceeded(): void
     {
         $this->assertTrue($this->rule->validate('string', ''));
 
