@@ -10,7 +10,7 @@ class RegexRule implements RuleInterface
      * 正規表現にマッチする
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

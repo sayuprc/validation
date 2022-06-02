@@ -11,6 +11,9 @@ class ArrayRuleTest extends TestCase
 {
     private ArrayRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -20,8 +23,10 @@ class ArrayRuleTest extends TestCase
 
     /**
      * 値が配列の時、検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceededWithArray()
+    public function testValidationSucceededWithArray(): void
     {
         $this->assertTrue($this->rule->validate([0, 1, 2], ''));
 
@@ -31,24 +36,30 @@ class ArrayRuleTest extends TestCase
 
     /**
      * 値が文字列の時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithString()
+    public function testValidationFailedWithString(): void
     {
         $this->assertFalse($this->rule->validate('array', ''));
     }
 
     /**
      * 値が数値の時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNumeric()
+    public function testValidationFailedWithNumeric(): void
     {
         $this->assertFalse($this->rule->validate(1, ''));
     }
 
     /**
      * 値がNULL値の時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNull()
+    public function testValidationFailedWithNull(): void
     {
         $this->assertFalse($this->rule->validate(null, ''));
     }

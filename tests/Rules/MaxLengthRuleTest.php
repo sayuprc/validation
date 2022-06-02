@@ -11,6 +11,9 @@ class MaxLengthRuleTest extends TestCase
 {
     private MaxLengthRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -20,8 +23,10 @@ class MaxLengthRuleTest extends TestCase
 
     /**
      * 文字列長が指定以下の時、検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceeded()
+    public function testValidationSucceeded(): void
     {
         $this->assertTrue($this->rule->validate('s', '1'));
 
@@ -30,8 +35,10 @@ class MaxLengthRuleTest extends TestCase
 
     /**
      * 文字列長が指定より大きい時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailed()
+    public function testValidationFailed(): void
     {
         $this->assertFalse($this->rule->validate('st', '1'));
 
@@ -40,8 +47,10 @@ class MaxLengthRuleTest extends TestCase
 
     /**
      * 値がNULLの時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNull()
+    public function testValidationFailedWithNull(): void
     {
         $this->assertFalse($this->rule->validate(null, '4'));
     }

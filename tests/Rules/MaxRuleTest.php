@@ -11,6 +11,9 @@ class MaxRuleTest extends TestCase
 {
     private MaxRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -20,8 +23,10 @@ class MaxRuleTest extends TestCase
 
     /**
      * 数値が指定以下の時、検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceeded()
+    public function testValidationSucceeded(): void
     {
         $this->assertTrue($this->rule->validate(0, '0'));
 
@@ -34,8 +39,10 @@ class MaxRuleTest extends TestCase
 
     /**
      * 数値が指定より大きい時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailed()
+    public function testValidationFailed(): void
     {
         $this->assertFalse($this->rule->validate(2, '1'));
 
@@ -46,8 +53,10 @@ class MaxRuleTest extends TestCase
 
     /**
      * 値がNULLの時、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNull()
+    public function testValidationFailedWithNull(): void
     {
         $this->assertFalse($this->rule->validate(null, '4'));
     }

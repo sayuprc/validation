@@ -11,10 +11,19 @@ class Validator
 {
     private ValidateData $data;
 
+    /**
+     * @var array<string, array<string>> $rules
+     */
     private array $rules;
 
+    /**
+     * @var array<string, array<string>> $messages
+     */
     private array $messages;
 
+    /**
+     * @var array<string> $errors
+     */
     private array $errors;
 
     /**
@@ -23,9 +32,9 @@ class Validator
     private array $cache;
 
     /**
-     * @param array $data
-     * @param array $rules
-     * @param array $messages
+     * @param array<string, mixed>         $data
+     * @param array<string, array<string>> $rules
+     * @param array<string, array<string>> $messages
      *
      * @return void
      */
@@ -43,7 +52,7 @@ class Validator
     /**
      * エラー表示に利用するメッセージの組み立て
      *
-     * @param array $messages
+     * @param array<string, array<string>> $messages
      *
      * @return void
      */
@@ -94,7 +103,7 @@ class Validator
                     $ruleVerifier = $this->makeRule($rule);
                 }
 
-                if ($shouldValidate && ! $ruleVerifier->validate($value, $parameters, $this->data)) {
+                if ($shouldValidate && ! $ruleVerifier->validate($value, $parameters)) {
                     $this->addErrors($name, $rule);
                 }
             }
@@ -108,7 +117,7 @@ class Validator
      *
      * @param string $rule
      *
-     * @return array<string, string>
+     * @return array<string>
      */
     private function parseRule(string $rule): array
     {
@@ -134,7 +143,7 @@ class Validator
      */
     private function makeRule(string $rule): RuleInterface
     {
-        $className = sprintf("\Validation\Rules\%sRule", $rule);
+        $className = sprintf("\%s\Rules\%sRule", __NAMESPACE__, $rule);
 
         if (! class_exists($className)) {
             throw new NotExistsRuleException(sprintf('Rule does not exists. [%s]', $className));
@@ -143,6 +152,7 @@ class Validator
         $instance = $this->getCache($className);
 
         if ($instance === null) {
+            /** @var RuleInterface $instance */
             $instance = new $className();
             $this->cache[$className] = $instance;
         }
@@ -183,6 +193,7 @@ class Validator
 
         if ($instance === null) {
             $requiredRule = $this->makeRule('Required');
+            /** @var RuleInterface $instance */
             $instance = new $className($requiredRule, $this->data);
             $this->cache[$className] = $instance;
         }
@@ -223,7 +234,7 @@ class Validator
      * ルールの指定があるか
      *
      * @param string $name
-     * @param string $rules
+     * @param string $rule
      *
      * @return bool
      */
@@ -235,8 +246,8 @@ class Validator
     /**
      * 指定ルールが一つでもあるかどうか
      *
-     * @param string $name
-     * @param array  $rules
+     * @param string        $name
+     * @param array<string> $rules
      *
      * @return bool
      */
@@ -255,7 +266,6 @@ class Validator
      * 他カラムに依存するルールを使っているか
      *
      * @param string $name
-     * @param string $rule
      *
      * @return bool
      */
@@ -285,7 +295,7 @@ class Validator
     /**
      * 検証エラーメッセージ
      *
-     * @return array
+     * @return array<string>
      */
     public function errors(): array
     {

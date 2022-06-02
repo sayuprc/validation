@@ -10,7 +10,7 @@ class MaxRule implements RuleInterface
      * 数値が指定より小さい
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */
