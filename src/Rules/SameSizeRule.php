@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class SameSizeRule implements RuleInterface
@@ -8,7 +10,7 @@ class SameSizeRule implements RuleInterface
      * 数値が指定と同じ
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $finder = PhpCsFixer\Finder::create()
     ->in([
         __DIR__ . '/src',
@@ -36,6 +38,8 @@ return (new PhpCsFixer\Config())
         'compact_nullable_typehint' => true,
         'concat_space' => ['spacing' => 'one'],
         'constant_case' => ['case' => 'lower'],
+
+        'declare_strict_types' => true,
 
         'explicit_string_variable' => true,
 

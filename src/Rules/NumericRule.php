@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class NumericRule implements RuleInterface
@@ -8,7 +10,7 @@ class NumericRule implements RuleInterface
      * 値が数値である
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

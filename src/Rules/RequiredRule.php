@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class RequiredRule implements RuleInterface
@@ -13,8 +15,8 @@ class RequiredRule implements RuleInterface
      * - 空文字
      * - count()の値が0以下
      *
-     * @param mixed  $value
-     * @param string $parameter
+     * @param mixed $value
+     * @param mixed $parameters
      *
      * @return bool
      */

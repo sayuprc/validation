@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class MinRule implements RuleInterface
@@ -8,7 +10,7 @@ class MinRule implements RuleInterface
      * 数値が指定以上
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

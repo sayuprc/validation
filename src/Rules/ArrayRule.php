@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 class ArrayRule implements RuleInterface
@@ -8,7 +10,7 @@ class ArrayRule implements RuleInterface
      * 値が配列である
      *
      * @param mixed $value
-     * @param mixed $parameter
+     * @param mixed $parameters
      *
      * @return bool
      */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Validation\Rules;
 
 use Validation\ValidateData;
@@ -19,8 +21,8 @@ class RequiredWithRule implements RuleInterface
     /**
      * パラメータが一つでも存在する場合、必須
      *
-     * @param mixed  $value
-     * @param string $parameter
+     * @param mixed $value
+     * @param mixed $parameters
      *
      * @return bool
      */

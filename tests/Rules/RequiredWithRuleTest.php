@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Rules;
 
 use PHPUnit\Framework\TestCase;
@@ -11,6 +13,9 @@ class RequiredWithRuleTest extends TestCase
 {
     private RequiredWithRule $rule;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -27,8 +32,10 @@ class RequiredWithRuleTest extends TestCase
 
     /**
      * 他のカラムが1つでも存在する場合、必須
+     *
+     * @return void
      */
-    public function testValidationSucceeded()
+    public function testValidationSucceeded(): void
     {
         // nameをバリデーション
         $this->assertTrue($this->rule->validate('hoge', 'age'));
@@ -40,8 +47,10 @@ class RequiredWithRuleTest extends TestCase
 
     /**
      * 他のカラムが一つも存在しない場合、検証成功
+     *
+     * @return void
      */
-    public function testValidationSucceededWithNotExistsOthers()
+    public function testValidationSucceededWithNotExistsOthers(): void
     {
         // nameをバリデーション
         $this->assertTrue($this->rule->validate('hoge', 'gender'));
@@ -52,8 +61,10 @@ class RequiredWithRuleTest extends TestCase
 
     /**
      * 他のカラムが1つでも存在し、対象データがNULLの場合、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithNull()
+    public function testValidationFailedWithNull(): void
     {
         // nameをバリデーション
         $this->assertFalse($this->rule->validate(null, 'age'));
@@ -61,8 +72,10 @@ class RequiredWithRuleTest extends TestCase
 
     /**
      * 他のカラムが1つでも存在し、対象データが空文字の場合、検証失敗
+     *
+     * @return void
      */
-    public function testValidationFailedWithEmpty()
+    public function testValidationFailedWithEmpty(): void
     {
         // nameをバリデーション
         $this->assertFalse($this->rule->validate('', 'age'));

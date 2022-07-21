@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
@@ -9,6 +11,9 @@ class ValidateDataTest extends TestCase
 {
     private ValidateData $data;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         $this->data = new ValidateData([
@@ -18,7 +23,10 @@ class ValidateDataTest extends TestCase
         ]);
     }
 
-    public function testGetValue()
+    /**
+     * @return void
+     */
+    public function testGetValue(): void
     {
         $expected = 'hoge';
         $actual = $this->data->getValue('name');
@@ -26,7 +34,10 @@ class ValidateDataTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testGetNullValue()
+    /**
+     * @return void
+     */
+    public function testGetNullValue(): void
     {
         $expected = null;
         $actual = $this->data->getValue('job');
@@ -34,32 +45,50 @@ class ValidateDataTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testExists()
+    /**
+     * @return void
+     */
+    public function testExists(): void
     {
         $this->assertTrue($this->data->exists('name'));
     }
 
-    public function testNotExists()
+    /**
+     * @return void
+     */
+    public function testNotExists(): void
     {
         $this->assertFalse($this->data->exists('job'));
     }
 
-    public function testExistsAll()
+    /**
+     * @return void
+     */
+    public function testExistsAll(): void
     {
         $this->assertTrue($this->data->existsAll(['name', 'age']));
     }
 
-    public function testNotExistsAll()
+    /**
+     * @return void
+     */
+    public function testNotExistsAll(): void
     {
         $this->assertFalse($this->data->existsAll(['name', 'job']));
     }
 
-    public function testExistsAny()
+    /**
+     * @return void
+     */
+    public function testExistsAny(): void
     {
         $this->assertTrue($this->data->existsAny(['name', 'job']));
     }
 
-    public function testNotExistsAny()
+    /**
+     * @return void
+     */
+    public function testNotExistsAny(): void
     {
         $this->assertFalse($this->data->existsAny(['job', 'gender']));
     }
